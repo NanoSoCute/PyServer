@@ -15,9 +15,8 @@ def read_credentials_from_github(repo_url, filename):
         raise Exception("Failed to fetch file from GitHub")
 
 def login():
-    repo_url = 'https://raw.githubusercontent.com/NanoSoCute/PyServer/main/assets/credentials'
-    filename = 'logincredentials.txt'
-    credentials = read_credentials_from_github(repo_url, filename)
+    repo_url = 'https://raw.githubusercontent.com/NanoSoCute/PyServer/main/assets/credentials/logincredentials.txt'
+    credentials = read_credentials_from_github(repo_url)
     
     while True:
         username = input("Enter your username: ")
