@@ -4,7 +4,7 @@ import datetime
 import os
 import webbrowser
 import time
-from tqdm import tqdm
+import tqdm
 
 os.system('cls')
 
