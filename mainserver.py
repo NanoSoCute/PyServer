@@ -8,16 +8,6 @@ import tqdm
 
 os.system('cls')
 
-def loadingbar(max_steps):
-    for i in tqdm(range(100)):
-                    time.sleep(0.02)
-                    
-def lb2(max_steps):
-    for i in tqdm(range(100)):
-                    time.sleep(0.04)
-
-
-
 def read_credentials_from_github(repo_url):
     response = requests.get(repo_url)
     if response.status_code == 200:
@@ -44,8 +34,6 @@ def login():
     repo_url = 'https://raw.githubusercontent.com/NanoSoCute/PyServer/main/assets/credentials/logincredentials.txt'
     credentials = read_credentials_from_github(repo_url)
 
-    loadingbar(1)
-    time.sleep(1)
     print(' ')
     print('Operation Done - Fetched Execute Code From Github Repo')
     time.sleep(2)
@@ -75,7 +63,7 @@ def login():
                     os.system('cls')
                     print('Logging Out From : ' + username)
                     print(' ')
-                    lb2(1)
+                    time.sleep(2)
                     print(' ')
                     print('Operation Done - Logged Out Success')
                     print(' ')
@@ -96,5 +84,4 @@ def login():
             os.system('cls')
 
 if __name__ == "__main__":
-    loadingbar(2)
     login()
