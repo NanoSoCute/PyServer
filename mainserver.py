@@ -35,7 +35,8 @@ def open_program(program_number):
         program_path = "C:/Program Files/Mozilla Firefox/firefox.exe"  # Replace with the actual path
         subprocess.Popen(program_path)
     elif program_number == "2":
-        print('Hello World from Program 2!')
+        program_path2 = "D:/Minecraft/Tl.exe"
+        subprocess.Popen(program_path2)
     else:
         print("Invalid input. Please enter 1 or 2.")
 
