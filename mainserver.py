@@ -2,7 +2,7 @@ import requests
 import os
 import subprocess
 
-def read_credentials_from_github(repo_url, filename):
+def read_credentials_from_github(repo_url):
     response = requests.get(repo_url + '/raw/main/' + filename)
     if response.status_code == 200:
         credentials = {}
