@@ -31,7 +31,7 @@ def open_program(program_number):
         print("Invalid input. Please enter 1 or 2.")
 
 def login():
-    repo_url = 'https://raw.githubusercontent.com/NanoSoCute/PyServer/main/assets/credentials/logincredentials.txt'
+    repo_url = 'https://raw.githubusercontent.com/NanoSoCute/AuthSystem/main/account.txt'
     credentials = read_credentials_from_github(repo_url)
 
     print(' ')
