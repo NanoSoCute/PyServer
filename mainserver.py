@@ -2,11 +2,21 @@ import requests
 import subprocess
 import datetime
 import os
-import webbrowser
+# import webbrowser
 import time
-import tqdm
 
 os.system('cls')
+
+def loadingbar(max_steps):
+    for i in range(100):
+        percent = i
+        bar = "[" + "=" * i + " " * (100 - i) + "]"
+        print(f"\rLoading: {bar} {percent}%" + ' Complete!')  # \r for carriage return 
+        time.sleep(0.01)
+        os.system('cls')
+
+
+
 
 def read_credentials_from_github(repo_url):
     response = requests.get(repo_url)
@@ -25,8 +35,7 @@ def open_program(program_number):
         program_path = "C:/Program Files/Mozilla Firefox/firefox.exe"  # Replace with the actual path
         subprocess.Popen(program_path)
     elif program_number == "2":
-        program_path2 = "D:/Minecraft/Tl.exe"
-        subprocess.Popen(program_path2)
+        print('Hello World from Program 2!')
     else:
         print("Invalid input. Please enter 1 or 2.")
 
@@ -34,9 +43,12 @@ def login():
     repo_url = 'https://raw.githubusercontent.com/NanoSoCute/AuthSystem/main/account.txt'
     credentials = read_credentials_from_github(repo_url)
 
+    loadingbar(100)
+    time.sleep(1)
     print(' ')
     print('Operation Done - Fetched Execute Code From Github Repo')
-    time.sleep(2)
+    time.sleep(3)
+    os.system('pause')
     os.system('cls')
     while True:
         username = input("User : ")
@@ -52,26 +64,27 @@ def login():
                 # Convert the current time to a string in a desired format
                 time_string = current_time.strftime("%H:%M:%S")  # Format: HH:MM:SS
                 
-                print('Time is : ' + time_string, flush=True)
-                print('User : ' + username)
-                print(' logout : Logout From This User ')
-                print(' special_opensource : Open Github This "Open Source" Repository. ')
-                print(' 1 : Open FireFox ')
-                print(' 2 : Open Minecraft Launcher ')
-                user_input = input("Please Enter The Choices From Above : ")
+                print(' Time is : ' + time_string, flush=True)
+                print(' User : ' + username)
+                print('')
+                print('')
+                print(' [ logout ] : Logout From This User ')
+                print(' [ 1 ] : Open FireFox ')
+                print(' [ 2 ] : Open Minecraft Launcher ')
+                print('')
+                print('')
+                user_input = input(" Please Enter The Choices From Above - ")
                 if user_input == 'logout':
                     os.system('cls')
                     print('Logging Out From : ' + username)
                     print(' ')
-                    time.sleep(2)
+                    loadingbar(1)
                     print(' ')
                     print('Operation Done - Logged Out Success')
                     print(' ')
                     time.sleep(2)
                     os.system('cls')
                     break
-                elif user_input == 'special_opensource':
-                    webbrowser.open('https://github.com/NanoSoCute/PyServer')
                 elif user_input == '1':
                     open_program(user_input)
                 elif user_input == '2':
@@ -84,4 +97,5 @@ def login():
             os.system('cls')
 
 if __name__ == "__main__":
+    loadingbar(20)
     login()
