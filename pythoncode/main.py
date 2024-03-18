@@ -2,8 +2,7 @@ import requests
 import subprocess
 import datetime
 import os
-# import webbrowser
-import time
+import time  # Importing the time module
 
 os.system('cls')
 
@@ -14,9 +13,6 @@ def loadingbar(max_steps):
         print(f"\rLoading: {bar} {percent}%" + ' Complete!')  # \r for carriage return 
         time.sleep(0.01)
         os.system('cls')
-
-
-
 
 def read_credentials_from_github(repo_url):
     response = requests.get(repo_url)
