@@ -2,7 +2,7 @@ import requests
 import subprocess
 import datetime
 import os
-import time  # Importing the time module
+# import time  # Importing the time module
 
 os.system('cls')
 
@@ -11,7 +11,7 @@ def loadingbar(max_steps):
         percent = i
         bar = "[" + "=" * i + " " * (100 - i) + "]"
         print(f"\rLoading: {bar} {percent}%" + ' Complete!')  # \r for carriage return 
-        time.sleep(0.01)
+        # time.sleep(0.01)
         os.system('cls')
 
 def read_credentials_from_github(repo_url):
@@ -40,10 +40,10 @@ def login():
     credentials = read_credentials_from_github(repo_url)
 
     loadingbar(100)
-    time.sleep(1)
+    # time.sleep(1)
     print(' ')
     print('Operation Done - Fetched Execute Code From Github Repo')
-    time.sleep(3)
+    # time.sleep(3)
     os.system('pause')
     os.system('cls')
     while True:
@@ -78,7 +78,7 @@ def login():
                     print(' ')
                     print('Operation Done - Logged Out Success')
                     print(' ')
-                    time.sleep(2)
+                    # time.sleep(2)
                     os.system('cls')
                     break
                 elif user_input == '1':
@@ -89,7 +89,7 @@ def login():
                     print("Invalid input. Please enter 1, 2, or 'logout'.")
         else:
             print("Invalid username or password. Please try again.")
-            time.sleep(2)
+            # time.sleep(2)
             os.system('cls')
 
 if __name__ == "__main__":
